@@ -8,6 +8,9 @@ const config: Config = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif']
+    },
     colors: {
       yellow: '#FFCB74',
       gray: {
