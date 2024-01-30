@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-      <div className="flex min-h-screen">
+      <div className="grid grid-cols-2 min-h-screen">
         <SidebarComponent />
         {children}
       </div>
