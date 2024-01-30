@@ -1,7 +1,7 @@
+import { cva } from "class-variance-authority";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
-import { cva } from 'class-variance-authority'
+import { ComponentProps, ReactNode } from "react"
 
 const linkVariants = cva('py-1.5 px-3 rounded-md flex items-center gap-2', {
     variants: {
@@ -15,12 +15,12 @@ const linkVariants = cva('py-1.5 px-3 rounded-md flex items-center gap-2', {
     }
 })
 
-interface SidebarLinkProps {
-    href: string;
-    children: ReactNode
-} 
+interface SidebarActionProps extends ComponentProps<'button'> {
+    href?: string;
+    children: ReactNode;
+}
 
-export function SidebarLink({ href, children}: SidebarLinkProps) {
+export function SidebarAction({href, children, ...props}: SidebarActionProps) {
     const pathname = usePathname()
     const isCurrentLink = pathname === href
 
@@ -28,12 +28,12 @@ export function SidebarLink({ href, children}: SidebarLinkProps) {
         const variant = isCurrentLink ? 'active' : 'inactive'
         return linkVariants({intent: variant})
     }
+    
+    if (href) {
+        return <Link href={href} className={getLinkVariant()}>{children}</Link>
+    }
 
     return (
-        <li className={getLinkVariant()}>
-            <Link className="flex items-center gap-2 w-full" href={href}>
-                {children}
-            </Link>
-        </li>
+        <button className={linkVariants()} {...props}>{children}</button>
     )
 }

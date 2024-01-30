@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/sidebar";
+import { SidebarComponent } from "@/components/sidebar/sidebar";
 
 const inter = Poppins({ subsets: ["latin"], weight: ['400', '600'] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
       <div className="flex min-h-screen flex-col">
-        <Sidebar />
+        <SidebarComponent />
         {children}
       </div>
     </body>

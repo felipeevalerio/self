@@ -1,27 +1,27 @@
 import { CircleDollarSign, Album, Droplet, Dumbbell } from "lucide-react";
-import { SidebarLink } from "./link";
+import { Sidebar } from ".";
 
 export function SidebarMainNavigation() {
     return (
         <nav className="mt-12">
-            <ul className="flex flex-col gap-3">
-                <SidebarLink href="/finance">
+            <Sidebar.Actions>
+                <Sidebar.Action href="/finance">
                     <CircleDollarSign size={24} />
                     Finance
-                </SidebarLink>
-                <SidebarLink href="/gym-progress">
+                </Sidebar.Action>
+                <Sidebar.Action href="/gym-progress">
                     <Dumbbell size={24} />
                     Gym Progress
-                </SidebarLink>
-                <SidebarLink href="/water-intake">
+                </Sidebar.Action>
+                <Sidebar.Action href="/water-intake">
                     <Droplet size={24} />
                     Water Intake
-                </SidebarLink>
-                <SidebarLink href="/tracking-calories">
+                </Sidebar.Action>
+                <Sidebar.Action href="/tracking-calories">
                     <Album size={24} />
                     Tracking Calories
-                </SidebarLink>
-            </ul>
+                </Sidebar.Action>
+            </Sidebar.Actions>
         </nav>
     )
 }
