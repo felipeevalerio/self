@@ -1,15 +1,15 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
   theme: {
     fontFamily: {
-      sans: ['Poppins', 'sans-serif']
+      sans: ['Poppins', 'sans-serif'],
     },
     colors: {
       yellow: '#FFCB74',
@@ -20,10 +20,10 @@ const config: Config = {
       },
       white: {
         500: '#f2f2f2',
-        700: '#f0f0f0'
-      }
-    }
+        700: '#f0f0f0',
+      },
+    },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

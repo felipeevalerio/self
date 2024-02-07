@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import { SidebarComponent } from '@/components/sidebar/sidebar'
+import { Header } from '@/components/header'
 
 const inter = Poppins({ subsets: ['latin'], weight: ['400', '600'] })
 
@@ -20,7 +21,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="grid grid-cols-2 min-h-screen">
           <SidebarComponent />
-          {children}
+          <div className="pr-24 pt-7 py-6">
+            <Header />
+            {children}
+          </div>
         </div>
       </body>
     </html>
